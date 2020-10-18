@@ -14,6 +14,8 @@ Les interactions entre l'app blazor et l'ASP.NET Core app se font via
 - Des appels web API
 - SignalR
 
+![WebAssembly](docs/img/WebAssembly.png)
+
 **blazor.webassembly.js** = script qui gère :
 - Téléchargement du Runtime .NET, de l’application et des dépendances de l’application.
 - Initialisation du runtime pour exécuter l’application.
@@ -32,6 +34,8 @@ Les interactions entre l'app blazor et l'ASP.NET Core app se font via
 Avec **Blazor Server** : l'application blazor exécutée côté serveur dans une app ASP.NET Core. Les maj d'UI et la gestion d'événements se font via signalR.
 
 Le blazor.server.js script établit la connexion client. La classe Startup initialise les services côté serveur et ajoute l'app blazor dans le pipeline de gestion des requêtes. 
+
+![BlazorServer](docs/img/BlazorServer.png)
 
 **Avantages Blazor Server** : 
 	- Taille de téléchargement significativement plus petite
@@ -64,3 +68,47 @@ Constitution d'une app blazor :
 
 ## Counter
 
+**Ajouter un composant** : Chaque fichier .razor définit un composant UI qui peut être réutilisé. 
+
+Example d'inclusion du composant Counter : 
+```html
+@page "/"
+		
+<h1>Hello, world!</h1>
+		
+Welcome to your new app.
+		
+<SurveyPrompt Title="How is Blazor working for you?" />
+		
+<Counter />
+```
+
+**Modifier un composant** : Chaque composant a une partie avec du html (@page "/counter") et un bloc C# : @code { … }
+
+Dans ce bloc code, on peut spécifier (comme pour une classe C#, des paramètres et des méthodes) 
+
+Example : 
+
+![BlazorServer](docs/img/Counter.razor.png)
+
+On peut setter ces paramètres dans le composant parent : 
+
+```html
+<Counter IncrementCount="10" />
+```
+
+## TodoItem
+
+Les paramètres peuvent avoir comme type une classe C# définie dans un fichier .cs : 
+
+**Insertion de code C# dans l'HTML** :
+
+![BlazorServer](docs/img/TodoItemClass.png)
+
+![BlazorServer](docs/img/TodoListHtml.png)
+
+**Lier un élément HTML avec une variable C#** : 
+
+![BlazorServer](docs/img/InsertCodeHtml.png)
+
+![BlazorServer](docs/img/LinkCodeHtml.png)
