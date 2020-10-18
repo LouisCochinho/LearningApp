@@ -112,3 +112,56 @@ Les paramètres peuvent avoir comme type une classe C# définie dans un fichier 
 ![BlazorServer](docs/img/InsertCodeHtml.png)
 
 ![BlazorServer](docs/img/LinkCodeHtml.png)
+
+## FetchData
+
+ Ce composant démontre comment récupérer des données d'un service
+
+**Injecter une classe service dans une page razor** : 
+
+```cs
+@using TodoList.Data
+@inject WeatherForecastService ForecastService
+```
+Avec TodoList.Data contenant WeatherForecastService.cs.
+
+**Invoquer une méthode quand le composant est prêt à être démarré**:
+
+```cs
+
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+}
+
+```
+
+**Exemple de tableau avec des données d'une variable**:
+
+```html 
+<table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+```
