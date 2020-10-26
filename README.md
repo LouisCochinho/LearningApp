@@ -165,3 +165,33 @@ Avec TodoList.Data contenant WeatherForecastService.cs.
         </tbody>
     </table>
 ```
+
+## Two-way data binding
+
+**@bind** : Fonctionnalité de liaison de données 
+
+Types de données supportés : 
+
+- string
+- int 
+- DateTime
+- Enum
+- Bool
+
+Si besoin d'un autre type : decimal => Fournir getter/setter
+
+Example : 
+
+```html 
+@page "/twowaydatabinding"
+
+<p>
+    Enter your name: <input type="text" @bind="Name" /><br />
+</p>
+
+<h2>Hello @Name!</h2>
+
+@code {
+    private string Name { get; set; }
+}
+```
