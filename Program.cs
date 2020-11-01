@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace TodoList
+namespace LearningApp
 {
 	public class Program
 	{

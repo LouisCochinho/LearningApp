@@ -128,10 +128,11 @@ Les paramètres peuvent avoir comme type une classe C# définie dans un fichier 
 **Injecter une classe service dans une page razor** : 
 
 ```cs
-@using TodoList.Data
+@using LearningApp.Services
+@using LearningApp.Models
 @inject WeatherForecastService ForecastService
 ```
-Avec TodoList.Data contenant WeatherForecastService.cs.
+Avec LearningApp.Services contenant WeatherForecastService.cs.
 
 **Invoquer une méthode quand le composant est prêt à être démarré**:
 
@@ -216,7 +217,7 @@ On sépare le code C# du html. On passe de
 
 ```html
 @page "/counter"
-@inherits TodoList.Components.Counter
+@inherits LearningApp.Components.Counter
 <h1>Counter</h1>
 
 <p>Current count: @CurrentCount</p>

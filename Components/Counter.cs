@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace TodoList.Components
+namespace LearningApp.Components
 {
 	public partial class Counter : ComponentBase
 	{

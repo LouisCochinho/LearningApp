@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using LearningApp.Models;
+using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
-using TodoList.Models;
 
-namespace TodoList.Components
+namespace LearningApp.Components
 {
 	public partial class TodoList : ComponentBase
 	{

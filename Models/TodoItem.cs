@@ -1,4 +1,4 @@
-﻿namespace TodoList.Models
+﻿namespace LearningApp.Models
 {
 	public class TodoItem
 	{
