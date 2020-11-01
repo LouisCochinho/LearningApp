@@ -2,7 +2,7 @@
 
 namespace TodoList.Components
 {
-	public partial class Counter: ComponentBase
+	public partial class Counter : ComponentBase
 	{
 		public int CurrentCount { get; set; }
 
