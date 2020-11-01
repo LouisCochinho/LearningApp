@@ -1,5 +1,13 @@
 # README
 
+- [README](#readme)
+  * [Introduction Blazor](#introduction-blazor)
+  * [Counter](#counter)
+  * [TodoItem](#todoitem)
+  * [FetchData](#fetchdata)
+  * [Two-way data binding](#two-way-data-binding)
+  * [Code behind](#code-behind)
+  
 ## Introduction Blazor
 
 Blazor = framework web conçu pour s'éxecuter soit :
