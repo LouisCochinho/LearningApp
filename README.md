@@ -195,3 +195,44 @@ Example :
     private string Name { get; set; }
 }
 ```
+
+## Code behind
+
+On sépare le code C# du html. On passe de 
+
+![BlazorServer](docs/img/Counter.razor.png)
+
+à 
+
+```html
+@page "/counter"
+@inherits TodoList.Components.Counter
+<h1>Counter</h1>
+
+<p>Current count: @CurrentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+```
+
+avec une classe Counter.cs situé dans un répertoire Components
+
+/!\ **Classe partielle qui hérite de ComponentBase**
+
+Une classe partielle n'est pas obligatoire dans ce cas. En C#, une classe partielle peut être utilisée pour fractionner une définition de classe. Voir exemple [ici](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods). 
+
+```csharp
+using Microsoft.AspNetCore.Components;
+
+namespace TodoList.Components
+{
+	public partial class Counter: ComponentBase
+	{
+		public int CurrentCount { get; set; }
+
+		public void IncrementCount()
+		{
+			CurrentCount++;
+		}
+	}
+}
+```

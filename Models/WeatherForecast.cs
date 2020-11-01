@@ -1,6 +1,6 @@
 using System;
 
-namespace TodoList.Data
+namespace TodoList.Models
 {
     public class WeatherForecast
     {
@@ -11,5 +11,6 @@ namespace TodoList.Data
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
         public string Summary { get; set; }
+
     }
 }

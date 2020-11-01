@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using TodoList.Models;
 
-namespace TodoList.Data
+namespace TodoList.Services
 {
     public class WeatherForecastService
     {
