@@ -7,7 +7,7 @@
   * [FetchData](#fetchdata)
   * [Two-way data binding](#two-way-data-binding)
   * [Code behind](#code-behind)
-  
+
 ## Introduction Blazor
 
 Blazor = framework web conçu pour s'éxecuter soit :
@@ -188,13 +188,15 @@ Types de données supportés :
 
 Si besoin d'un autre type : decimal => Fournir getter/setter
 
+Use **@bind:event="oninput"** parce que contrairement à onchange (event par défaut) , qui se déclenche lorsque l’élément perd le focus, oninput se déclenche lorsque la valeur de la zone de texte change.
+
 Example : 
 
 ```html 
 @page "/twowaydatabinding"
 
 <p>
-    Enter your name: <input type="text" @bind="Name" /><br />
+    Enter your name: <input type="text" @bind="Name" @bind:event="oninput"/><br />
 </p>
 
 <h2>Hello @Name!</h2>

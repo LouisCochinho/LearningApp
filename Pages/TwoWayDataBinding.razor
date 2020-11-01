@@ -1,16 +1,16 @@
 @page "/twowaydatabinding"
 
 <p>
-    Enter your name: <input type="text" @bind="Name" /><br />
-    What is your age? <input type="number" @bind="Age" /><br />
-    What is your salery? <input type="number" @bind="Salary" /><br />
+    Enter your name: <input type="text" @bind="Name" @bind:event="oninput"/><br />
+    What is your age? <input type="number" @bind="Age" @bind:event="oninput"/><br />
+    What is your salery? <input type="number" @bind="Salary" @bind:event="oninput"/><br />
 
-    What is your birthday (culture-invariant default format)? <input type="text" @bind="Birthday" /><br />
-    What is your birthday (German date format)? <input type="text" @bind="Birthday" format-value="dd.MM.yyyy" /><br />
+    What is your birthday (culture-invariant default format)? <input type="text" @bind="Birthday" @bind:event="oninput"/><br />
+    What is your birthday (German date format)? <input type="text" @bind="Birthday" format-value="dd.MM.yyyy" @bind:event="oninput"/><br />
 
-    Are you a manager? <input type="checkbox" @bind="IsManager" /><br />
+    Are you a manager? <input type="checkbox" @bind="IsManager" @bind:event="oninput"/><br />
 
-    <select id="select-box" @bind="TypeOfEmployee">
+    <select id="select-box" @bind="TypeOfEmployee" @bind:event="oninput">
         <option value=@EmployeeType.Employee>@EmployeeType.Employee.ToString()</option>
         <option value=@EmployeeType.Contractor>@EmployeeType.Contractor.ToString()</option>
         <option value=@EmployeeType.Intern>@EmployeeType.Intern.ToString()</option>
